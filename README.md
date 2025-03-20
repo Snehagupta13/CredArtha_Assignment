@@ -1,4 +1,48 @@
 # CredArtha_Assignment
+# Financial Insights Generation Using LLMs
+
+This project aims to generate human-readable financial insights using open-source Large Language Models (LLMs). It involves cleaning and structuring financial data, categorizing transactions, flagging high-risk borrowers, and generating insights such as financial health summaries, risk assessments, and personalized recommendations.
+
+---
+
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Tasks](#tasks)
+   - [Task 0: Environment Setup](#task-0-environment-setup)
+   - [Task 1: Data Cleaning and Structuring](#task-1-data-cleaning-and-structuring)
+   - [Task 2: Transaction Categorization Using NLP](#task-2-transaction-categorization-using-nlp)
+   - [Task 3: Bureau Risk Model](#task-3-bureau-risk-model)
+   - [Task 4: LLM-Based Financial Insights Using Open-Source Models](#task-4-llm-based-financial-insights-using-open-source-models)
+   - [Task 5: Deploying the Model as an API](#task-5-deploying-the-model-as-an-api)
+3. [Setup Instructions](#setup-instructions)
+4. [Running the Code](#running-the-code)
+5. [API Usage](#api-usage)
+6. [Future Enhancements](#future-enhancements)
+
+---
+
+## Project Overview
+
+The project is divided into six tasks:
+1. **Environment Setup**: Set up the Python environment and install dependencies.
+2. **Data Cleaning and Structuring**: Clean and structure raw financial data.
+3. **Transaction Categorization Using NLP**: Categorize transactions using Natural Language Processing (NLP).
+4. **Bureau Risk Model**: Develop a risk model to flag high-risk borrowers.
+5. **LLM-Based Financial Insights**: Use open-source LLMs to generate financial insights.
+6. **Deploying the Model as an API**: Deploy the LLM as an API for real-time insights.
+
+---
+
+## Tasks
+
+### Task 0: Environment Setup
+Set up the Python environment and install all required dependencies.
+
+#### Steps:
+1. Create a virtual environment:
+   ```bash
+   python -m venv myenv
+   
 CredArtha_Assignment/
 │
 ├── Datacollection/                    # Task 0: Synthetic Data Generation
