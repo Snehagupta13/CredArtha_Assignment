@@ -1,7 +1,8 @@
 # CredArtha_Assignment
-# Financial Insights Generation Using LLMs
 
-This project aims to generate human-readable financial insights using open-source Large Language Models (LLMs). It involves cleaning and structuring financial data, categorizing transactions, flagging high-risk borrowers, and generating insights such as financial health summaries, risk assessments, and personalized recommendations.
+## Financial Insights Generation Using LLMs
+
+This project generates human-readable financial insights using open-source Large Language Models (LLMs). It involves cleaning and structuring financial data, categorizing transactions, flagging high-risk borrowers, and generating insights such as financial health summaries, risk assessments, and personalized recommendations.
 
 ---
 
@@ -36,46 +37,164 @@ The project is divided into six tasks:
 ## Tasks
 
 ### Task 0: Environment Setup
+
 Set up the Python environment and install all required dependencies.
 
 #### Steps:
 1. Create a virtual environment:
-   ```bash
-   python -m venv myenv
-   
+    ```bash
+    python -m venv myenv
+    source myenv/bin/activate  # On Windows use 'myenv\Scripts\activate'
+    ```
+
+2. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Configure environment variables in a `.env` file:
+    ```bash
+    GROQ_API_KEY=your_api_key_here
+    ```
+
+---
+
+### Task 1: Data Cleaning and Structuring
+
+- Perform data cleaning using `pandas`.
+- Handle missing values, outliers, and data normalization.
+- Convert financial data into a structured format.
+
+---
+
+### Task 2: Transaction Categorization Using NLP
+
+- Implement an NLP model using `TF-IDF` and `BERT`.
+- Classify financial transactions into categories like salary, rent, groceries, etc.
+- Provide categorized transaction data as output.
+
+---
+
+### Task 3: Bureau Risk Model
+
+- Build a risk assessment model using logistic regression or decision trees.
+- Generate risk scores for borrowers using credit bureau reports.
+- Use `SHAP` for model interpretability.
+
+---
+
+### Task 4: LLM-Based Financial Insights Using Open-Source Models
+
+- Generate financial insights using `LangChain` with `ChatGroq`.
+- Insights include:
+  - Financial health summaries
+  - Risk assessments
+  - Personalized financial recommendations
+  - Additional financial insights
+
+---
+
+### Task 5: Deploying the Model as an API
+
+- Deploy the insights model using `FastAPI` or `Flask`.
+- Provide REST API endpoints for generating financial insights in real-time.
+
+---
+
+## Project Structure
+
+```bash
 CredArtha_Assignment/
 │
-├── Datacollection/                    # Task 0: Synthetic Data Generation
-│   ├── collect.py                     # Script to generate synthetic data
-│   ├── financial_transactions.csv     # Generated transactions data
-│   ├── credit_bureau_reports.csv      # Generated credit bureau data
-│   └── README.md                      # Documentation for Task 0
+├── Datacollection/
+│   ├── collect.py
+│   ├── financial_transactions.csv
+│   ├── credit_bureau_reports.csv
+│   └── README.md
 │
-├── Database_setup/                    # Task 1: ETL Pipeline
-│   ├── mongo.py                       # Script for MongoDB ETL
-│   ├── postgres.py                    # Script for PostgreSQL ETL (optional)
-│   └── README.md                      # Documentation for Task 1
+├── Database_setup/
+│   ├── mongo.py
+│   ├── postgres.py
+│   └── README.md
 │
-├── NLP_Categorization/                # Task 2: NLP-Based Transaction Categorization
-│   ├── nlp_model.py                   # Script for NLP-based categorization
-│   ├── bert_nlp_model.py              # Script for BERT-based categorization (Bonus)
-│   ├── nlp_model.pkl                  # Trained TF-IDF model
-│   ├── tfidf_vectorizer.pkl           # TF-IDF vectorizer
-│   ├── bert_nlp_model.pkl             # Trained BERT model (Bonus)
-│   ├── categorized_transactions.csv   # Output of categorized transactions
-│   └── README.md                      # Documentation for Task 2
+├── NLP_Categorization/
+│   ├── nlp_model.py
+│   ├── bert_nlp_model.py
+│   ├── nlp_model.pkl
+│   ├── tfidf_vectorizer.pkl
+│   ├── bert_nlp_model.pkl
+│   ├── categorized_transactions.csv
+│   └── README.md
 │
-├── Credit_Risk_Analysis/              # Task 3: Bureau Report Analysis & Credit Risk Assessment
-│   ├── credit_risk_model.py           # Script for credit risk model
-│   ├── credit_risk_model.pkl          # Trained credit risk model
-│   ├── shap_summary_plot.png          # SHAP explainability plot
-│   ├── risk_predictions.csv           # Output of risk predictions
-│   └── README.md                      # Documentation for Task 3
+├── Credit_Risk_Analysis/
+│   ├── credit_risk_model.py
+│   ├── credit_risk_model.pkl
+│   ├── shap_summary_plot.png
+│   ├── risk_predictions.csv
+│   └── README.md
 │
-├── API_Deployment/                    # Bonus: API Deployment
-│   ├── api.py                         # FastAPI/Flask script for deployment
-│   ├── requirements.txt               # Dependencies for API
-│   └── README.md                      # Documentation for API deployment
+├── API_Deployment/
+│   ├── api.py
+│   ├── requirements.txt
+│   └── README.md
 │
-├── requirements.txt                   # Global dependencies for the project
-└── README.md                          # Overall project documentation
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Running the Code
+
+1. Ensure all dependencies are installed using:
+    ```bash
+    pip install -r requirements.txt
+    ```
+2. Run individual tasks as needed, for example:
+    ```bash
+    python NLP_Categorization/nlp_model.py
+    ```
+
+3. To deploy the API:
+    ```bash
+    cd API_Deployment
+    python api.py
+    ```
+
+---
+
+## API Usage
+
+- Start the API using FastAPI:
+    ```bash
+    uvicorn api:app --reload
+    ```
+- Access the Swagger documentation at `http://localhost:8000/docs`
+- Example endpoints:
+  - `/analyze_transactions`
+  - `/risk_assessment`
+  - `/generate_recommendations`
+
+---
+
+## Future Enhancements
+
+- Add additional LLM models for comparison.
+- Implement a more advanced financial risk analysis.
+- Enhance transaction categorization using large-scale datasets.
+- Provide a web UI for user-friendly interaction.
+
+---
+
+## License
+This project is licensed under the MIT License.
+
+---
+
+## Contributors
+- [Sneha Gupta](https://github.com/your-profile) - Initial development and implementation.
+
+---
+
+Happy Coding! 🚀
+
