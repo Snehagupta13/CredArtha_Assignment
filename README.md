@@ -114,7 +114,6 @@ CredArtha_Assignment/
 │
 ├── Database_setup/
 │   ├── mongo.py
-│   ├── postgres.py
 │   └── README.md
 │
 ├── NLP_Categorization/
@@ -155,11 +154,7 @@ CredArtha_Assignment/
     python NLP_Categorization/nlp_model.py
     ```
 
-3. To deploy the API:
-    ```bash
-    cd API_Deployment
-    python api.py
-    ```
+
 
 ---
 
@@ -169,11 +164,7 @@ CredArtha_Assignment/
     ```bash
     uvicorn api:app --reload
     ```
-- Access the Swagger documentation at `http://localhost:8000/docs`
-- Example endpoints:
-  - `/analyze_transactions`
-  - `/risk_assessment`
-  - `/generate_recommendations`
+
 
 ---
 
@@ -191,8 +182,7 @@ This project is licensed under the MIT License.
 
 ---
 
-## Contributors
-- [Sneha Gupta](https://github.com/your-profile) - Initial development and implementation.
+
 
 ---
 
