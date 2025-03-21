@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from langchain.chains import LLMChain
 from langchain_core.prompts import PromptTemplate
 from langchain_groq import ChatGroq  # Ensure you have langchain_groq installed
+import pandas as pd
 
 # Load environment variables from .env file
 load_dotenv()
@@ -61,13 +62,7 @@ def generate_financial_insights(transactions, risk_score):
     }
 
 # Example usage
-transactions = """
-- Jan 1: Salary +$5000
-- Jan 2: Rent -$1500
-- Jan 3: Groceries -$200
-- Jan 4: Utilities -$100
-- Jan 5: Entertainment -$300
-"""
+transactions = pd.read_csv("CredArtha_Assignment/Datacollection/credit_bureau_reports.csv")
 
 risk_score = 75
 
